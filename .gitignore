@@ -1,0 +1,16 @@
+.vscode
+results
+body_models
+dataset
+__pycache__
+glove
+*.tar
+visualizations/
+*.zip
+
+*.fbx
+*.pkl
+output/
+
+pose_to_smpl/vis_output/
+pose_to_smpl/original_motions/

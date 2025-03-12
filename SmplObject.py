@@ -9,36 +9,37 @@ from typing import Tuple
 from PathFilter import PathFilter
 
 class SmplObjects(object):
-    joints = ["Pelvis"
-    ,"L_Hip"
-    ,"R_Hip"
-    ,"Spine1"
+    joints = [
+        "Pelvis"
+        ,"L_Hip"
+        ,"R_Hip"
+        ,"Spine1"
 
-    ,"L_Knee"
-    ,"R_Knee"
-    ,"Spine2"
+        ,"L_Knee"
+        ,"R_Knee"
+        ,"Spine2"
 
-    ,"L_Ankle"
-    ,"R_Ankle"
-    ,"Spine3"
+        ,"L_Ankle"
+        ,"R_Ankle"
+        ,"Spine3"
 
-    ,"L_Foot"
-    ,"R_Foot"
-    ,"Neck"
+        ,"L_Foot"
+        ,"R_Foot"
+        ,"Neck"
 
-    ,"L_Collar"
-    ,"R_Collar"
+        ,"L_Collar"
+        ,"R_Collar"
 
-    ,"Head"
-    ,"L_Shoulder"
-    ,"R_Shoulder"
+        ,"Head"
+        ,"L_Shoulder"
+        ,"R_Shoulder"
 
-    ,"L_Elbow"
-    ,"R_Elbow"
-    ,"L_Wrist"
-    ,"R_Wrist"
-    ,"L_Hand"
-    ,"R_Hand"]
+        ,"L_Elbow"
+        ,"R_Elbow"
+        ,"L_Wrist"
+        ,"R_Wrist"
+        ,"L_Hand"
+        ,"R_Hand"]
     def __init__(self, read_path):
         self.files = {}
 
@@ -49,6 +50,13 @@ class SmplObjects(object):
             filename = path.split("/")[-1]
             with open(path, "rb") as fp:
                 data = pickle.load(fp)
+            
+            '''
+            data: 
+                'smpl_poses': (275, 72)
+                'smpl_trans': (275,3)
+                'smpl_scaling': (1,)
+            '''
             self.files[filename] = {"smpl_poses":data["smpl_poses"],
                                     "smpl_trans":data["smpl_trans"] / (data["smpl_scaling"][0]*100)}
         self.keys = [key for key in self.files.keys()]

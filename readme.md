@@ -1,8 +1,29 @@
+# (Pre-step) Prepare a SMPL pkl file with correct format
+## Directly download from [AIST++ dataset](https://google.github.io/aistplusplus_dataset/download.html)
+This is the correct SMPL format data used in this repository
+
+## Convert our own 3D joint positions to SMPL [this subfolder](./pose_to_smpl/)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # SMPL to FBX
 
 ![](Imgs/teaser.gif)
 
-> 🤖 Update 2023: Support blender addons.
+<!-- > 🤖 Update 2023: Support blender addons.
 
 I can convert motions in SMPL format into FBX files.
 
@@ -14,7 +35,7 @@ Blender files and part of codes are based on https://smpl.is.tue.mpg.de/.
 ### Install blender addon:
 (download zip file from Releases) -> `Edit` -> `Preferences` -> `Add-ons` -> `Install` -> (select the zip file) -> search smpl -> check the inventory of `SMPL: Load SMPL from pickle`
 
-https://github.com/softcat477/SMPL-to-FBX/assets/25975988/f212d1ed-d7b7-4481-be14-5866f4172075
+https://github.com/softcat477/SMPL-to-FBX/assets/25975988/f212d1ed-d7b7-4481-be14-5866f4172075 -->
 
 ### Load a smpl file:
 See the screen recording.

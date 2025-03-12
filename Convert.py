@@ -28,15 +28,30 @@ if __name__ == "__main__":
     output_base = args.output_base
 
     smplObjects = SmplObjects(input_pkl_base)
+
+    print("Converting SMPL to FBX")
+    print("smplObjects: ", smplObjects)
+
+
     for pkl_name, smpl_params in tqdm.tqdm(smplObjects):
-        try:
-            fbxReadWrite = FbxReadWrite(fbx_source_path)
-            fbxReadWrite.addAnimation(pkl_name, smpl_params)
-            fbxReadWrite.writeFbx(output_base, pkl_name)
-        except Exception as e:
-            fbxReadWrite.destroy()
-            print ("- - Distroy")
-            raise e
-        finally:
-            fbxReadWrite.destroy()
+
+        fbxReadWrite = FbxReadWrite(fbx_source_path)
+        print("successfully loaded the scene")
+        fbxReadWrite.addAnimation(pkl_name, smpl_params, verbose=True)
+        fbxReadWrite.writeFbx(output_base, pkl_name)
+
+
+
+    # for pkl_name, smpl_params in tqdm.tqdm(smplObjects):
+    #     try:
+    #         fbxReadWrite = FbxReadWrite(fbx_source_path)
+    #         print("successfully loaded the scene")
+    #         fbxReadWrite.addAnimation(pkl_name, smpl_params)
+    #         fbxReadWrite.writeFbx(output_base, pkl_name)
+    #     except Exception as e:
+    #         fbxReadWrite.destroy()
+    #         print ("- - Distroy")
+    #         raise e
+    #     finally:
+    #         fbxReadWrite.destroy()
 
